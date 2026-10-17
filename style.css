@@ -1,0 +1,242 @@
+
+.mulish{
+  font-family: "Mulish", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+/* body section */
+
+body { 
+  font-family: Arial, sans-serif; 
+  margin:0;  
+  background-image: url(img/view-gym-room-training-sports.jpg);
+  background-size: cover;
+}
+.container { 
+  /* max-width:400px;  */
+  margin:auto; 
+  padding-bottom:70px; 
+  display: flex; 
+  align-items: center; 
+  height: 50vh;
+  /* background-color: rgba(99, 174, 236, 0.679); */
+  border-radius: 15px;
+  margin-top: 10%;
+  width: 22%;
+}
+
+.blur-section{
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+}
+.screen { 
+  padding:20px; 
+  overflow-x: auto;
+}
+
+.screen::-webkit-scrollbar{
+  display: none;
+}
+
+.title { 
+  color:#e9fdfa; 
+  text-align:center; 
+  font-size: 36px;
+  padding-top:20px;
+}
+input { 
+  width:100%; 
+  padding:8px; margin:8px 0; 
+  border-radius:8px; border:1px solid #ccc; 
+  color: white;
+}
+
+button { 
+  padding:10px 20px; 
+  border:none; 
+  border-radius:8px; 
+  background:#00796b; 
+  color:white; 
+  cursor:pointer; 
+  margin:5px 0; 
+}
+button:hover{ 
+  background:#6abeb0; 
+}
+
+.stats { 
+  display:flex; 
+  justify-content:space-around; 
+  margin:20px 0; 
+}
+.stat h2{ 
+  margin:0; 
+  font-size:1.1em; 
+  color:rgb(213, 183, 255); 
+}
+.stat div{ 
+  font-size:1.5em; 
+  color:#f01717; 
+  margin-top:5px; 
+}
+
+.workout-list { 
+  margin-top:10px; 
+}
+.card, .health-card {
+  background:white; 
+  border-radius:12px; 
+  padding:12px; 
+  margin-bottom:10px; 
+  box-shadow:0 2px 6px rgba(0,0,0,0.2);
+}
+.health-card { 
+  text-align:center; 
+  font-weight:bold; 
+}
+
+.navbar {
+  position:fixed; 
+  bottom:0; 
+  width:100%; 
+  max-width:400px;
+  background:white; 
+  display:flex; 
+  justify-content:space-around; 
+  border-top:1px solid #ccc; 
+  padding:10px 0;
+}
+.navbar button { 
+  background:none; 
+  color:#00796b; 
+  font-size:1.2em; 
+  border:none; 
+  cursor:pointer; 
+}
+.navbar button:hover{ 
+  color:#004d40; 
+}
+
+.height-input { 
+  display:flex; 
+  justify-content:space-between; 
+  width: 100%;
+}
+.height-input input { 
+  width:48%; 
+}
+
+.input{
+  padding: 20px 25px 20px 20px;
+  font-size: 16px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  width: 87%;
+  background: transparent;
+  border: none;
+  outline: none;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 40px;
+
+}
+
+.input::placeholder{
+  color: white;
+}
+
+.basic-btn{
+  font-size: 18px;
+  width: 100%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  /* margin-top: 20%; */
+  margin-bottom: 0;
+  background-color:#fff;
+  border-radius: 40px;
+  cursor: pointer;
+  color: #333;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.basic-btn:hover{
+  background-color: rgb(64, 144, 175);
+  color:white;
+  transition: all 0.5s;
+}
+
+#workouts{
+  color: white;
+  text-align: center;
+}
+
+#dashboard{
+  height: 60vh;
+  color: white;
+  text-align: center;
+}
+
+.dashboard-btn{
+    font-size: 18px;
+    width: 100%;
+    padding: 15px 0;
+    background-color:#fff;
+    color: #333;
+    font-weight: 600;
+  letter-spacing: 2px;
+}
+.dashboard-btn:hover{
+  background-color: rgb(64, 144, 175);
+  color:white;
+  transition: all 0.5s;
+}
+
+.txt-clr-1{
+  color: #333;
+}
+
+.txt-clr-2{
+  color: white;
+}
+
+#profile{
+  width: 80%;
+  color: white;
+}
+
+#water{
+  width: 100%;
+  text-align: center ;
+}
+
+/*------------------
+ responsiveness
+ -------------------*/
+
+
+ @media (max-device-width:600px){
+   body{
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+   }
+
+   .container{
+    padding: 0;
+    width: 80%;
+    height: 100vh;
+   }
+
+   /* .height-input{
+    flex-direction: column;
+    width: 100%;
+   } */
+   .screen{
+    padding: 20px;
+   }
+
+ }

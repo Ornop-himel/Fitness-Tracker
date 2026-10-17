@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fitness Tracker App</title>
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/bbf8f924c2.js" crossorigin="anonymous"></script>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#ffffff">
+
+<script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("service-worker.js");
+  }
+</script>
+
+</head>
+<body class="mulish">
+
+<div class="container">
+
+  <!-- Login / Profile Setup -->
+  <div id="login" class="screen blur-section">
+    <h1 class="title"> Login </h1>
+    <input class="input" type="text" id="userName" placeholder="Enter Name">
+    <input class="input" type="number" id="userAge" placeholder="Age" min="0" value="0">
+    <div class="height-input">
+      <input class="input" type="number" id="userFeet" placeholder="Feet" min="0">
+      <input class="input" type="number" id="userInch" placeholder="Inches" min="0">
+    </div>
+    <input class="input" type="number" id="userWeight" placeholder="Weight (kg)">
+    <button class="basic-btn" id="saveProfile"> Login</button>
+  </div>
+
+  <!-- Dashboard -->
+  <div id="dashboard" class="screen blur-section" style="display:none">
+    <h1> Dashboard</h1>
+    <div class="stats">
+      <div class="stat"><h2>Steps</h2><div id="steps">0</div></div>
+      <div class="stat"><h2>Calories</h2><div id="calories">0</div></div>
+      <div class="stat"><h2>Water (ml)</h2><div id="waterIntake">0</div></div>
+    </div>  
+
+    <h3>Health Status</h3>
+    <div style="color: black;" id="healthStatus" class="health-card txt-clr-1">Not enough data</div>
+    <div style="color: black;" id="healthSuggestions" class="health-card txt-clr-1">-</div>
+
+    <button class="dashboard-btn" onclick="addStep()">Add Step</button>
+    <button class="dashboard-btn" onclick="drinkWater()">Drink Water (250ml)</button>
+
+    <h3>Recent Workouts</h3>
+    <div style="color: black;" id="workoutList" class="workout-list"></div>
+
+    <h3>Recent Meals</h3>
+    <div style="color: black;" id="mealList" class="workout-list"></div>
+
+    <h3>Progress Charts</h3>
+    <canvas id="workoutChart" width="350" height="200"></canvas>
+    <canvas id="mealChart" width="350" height="200"></canvas>
+  </div>
+
+  <!-- Workouts -->
+  <div id="workouts" class="screen blur-section" style="display:none">
+    <h1> Workouts</h1>
+    <input class="input" type="text" id="workoutType" placeholder="Workout Type">
+    <input class="input" type="number" id="workoutDuration" placeholder="Duration (min)">
+    <input class="input" type="number" id="workoutCalories" placeholder="Calories Burned">
+    <h3 id="warning-messege" style="color: red; display:none;">Wrning: Please fill all the fields</h3>
+    <button class="basic-btn" onclick="saveWorkout()">Save Workout</button>
+    <div id="allWorkouts" class="workout-list"></div>
+  </div>
+
+  <!-- Meals -->
+  <div id="meals" class="screen blur-section txt-clr-2" style="display:none">
+    <h1>🍽 Meal / Diet</h1>
+    <input class="input" type="text" id="mealName" placeholder="Meal Name">
+    <input class="input" type="number" id="mealCalories" placeholder="Calories">
+    <h3 id="warning-messege-meal" style="color: red; display:none;">Wrning: Please fill all the fields</h3>
+    <button class="basic-btn" onclick="saveMeal()">Save Meal</button>
+    <div id="allMeals" class="workout-list"></div>
+  </div>
+
+  <!-- Water -->
+  <div id="water" class="screen blur-section" style="display:none">
+    <h1 class="txt-clr-2 "> Water Intake</h1>
+    <h3 id="warning-messege-water" style="color: red; display:none;">Wrning: Please fill all the fields</h3>
+    <button class="basic-btn" onclick="drinkWater()">Drink 250ml</button>
+    <div id="waterHistory" class="workout-list"></div>
+  </div>
+
+  <!-- Profile -->
+  <div id="profile" class="screen blur-section" style="display:none">
+    <h1>👤 Profile</h1>
+    <div id="profileInfo"></div>
+    <button class="basic-btn" onclick="editProfile()">Edit Profile</button>
+  </div>
+
+  <!-- Navbar -->
+  <nav id="profile-id" class="navbar" style="display: none;">
+    <button onclick="showScreen('dashboard')">🏠</button>
+    <button onclick="showScreen('workouts')">🏋️</button>
+    <button onclick="showScreen('meals')">🍽</button>
+    <button onclick="showScreen('water')">💧</button>
+    <button onclick="showScreen('profile')">👤</button>
+  </nav>
+
+</div>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
